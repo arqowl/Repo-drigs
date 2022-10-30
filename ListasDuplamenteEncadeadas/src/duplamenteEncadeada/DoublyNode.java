@@ -1,7 +1,8 @@
 public class DoublyNode<T> {
     private DoublyNode<T> next ;
     private DoublyNode<T> prev ;
-    private int nodeCount;
+    private T info;
+    
 
     
     public DoublyNode<T> getNext() {
@@ -16,12 +17,15 @@ public class DoublyNode<T> {
     public void setPrev(DoublyNode<T> prev) {
         this.prev = prev;
     }
-    public int getNodeCount() {
-        return nodeCount;
+    public T getInfo() {
+        return info;
     }
-    public void setNodeCount(int nodeCount) {
-        this.nodeCount = nodeCount;
+    public void setInfo(T info) {
+        this.info = info;
     }
 
     
+  
+
+ 
 }
