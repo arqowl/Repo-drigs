@@ -2,9 +2,12 @@ public class DoublyNode<T> {
     private DoublyNode<T> next ;
     private DoublyNode<T> prev ;
     private T info;
-    
 
     
+    public DoublyNode(T info) {
+        this.info = info;
+    }
+
     public DoublyNode<T> getNext() {
         return next;
     }
