@@ -1,5 +1,5 @@
 package duplamenteEncadeadaCircular;
 
-public class CircularList {
+public class CircularLinkedList {
     
 }
