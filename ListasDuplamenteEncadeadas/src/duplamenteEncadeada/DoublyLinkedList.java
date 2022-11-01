@@ -233,6 +233,24 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
         return null;
     }
+
+    public void remove(T value){
+        DoublyNode<T> result = this.search(value);
+
+        if(result == null){
+            System.out.println("Value has not been found");
+        }
+        else if(this.nodeCount == 1){  //lista com apenas 1 nó
+            this.first = null;
+            this.last = null;
+            this.nodeCount = 0;
+        }
+        else if(result == this.first){
+            this.first = this.first.getNext();
+            this.first.setPrev(null);
+            this.nodeCount--;
+        }
+    }
     
 
 }
