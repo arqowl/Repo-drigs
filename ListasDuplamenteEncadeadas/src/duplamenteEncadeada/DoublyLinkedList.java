@@ -205,5 +205,34 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
 
     }
+    public DoublyNode<T> search (T value){  // busca sequencial melhorada
+        DoublyNode<T> aux;
+
+        if(this.isEmpty()){
+            return null;
+        }
+        else if(value.compareTo(this.last.getInfo()) == 0){
+            return this.last;
+        }
+        else if(value.compareTo(this.last.getInfo()) > 0){
+            return null;
+        }
+        else{
+            aux = this.first;
+            while(aux.getNext() != null){
+                if(aux.getInfo().compareTo(value) == 0){  //achei
+                    return aux;
+                }
+                else if(value.compareTo(aux.getInfo()) > 0){
+                    aux = aux.getNext();
+                }
+                else{
+                    return null;
+                }
+            }
+        }
+        return null;
+    }
+    
 
 }
