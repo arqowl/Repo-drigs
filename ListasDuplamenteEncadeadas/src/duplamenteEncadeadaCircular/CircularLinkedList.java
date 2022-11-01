@@ -24,6 +24,16 @@ public class CircularLinkedList<T extends Comparable <T>> {
             this.last.setNext(this.first);  //garantindo circularidade da lista
             this.first.setPrev(this.last);
         }
-        
+        else{
+            newNode.setNext(this.first);
+            this.first.setPrev(newNode);
+            this.first = newNode;
+            this.nodeNumber++;
+            this.last.setNext(this.first);
+            this.first.setPrev(this.last);
+
+        }
     }
+
+    
 }
