@@ -208,6 +208,8 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     public DoublyNode<T> search (T value){  // busca sequencial melhorada
         DoublyNode<T> aux;
 
+        
+
         if(this.isEmpty()){
             return null;
         }
@@ -237,6 +239,8 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     public void remove(T value){
         DoublyNode<T> result = this.search(value);
 
+        DoublyNode<T> before, after;
+
         if(result == null){
             System.out.println("Value has not been found");
         }
@@ -245,10 +249,24 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             this.last = null;
             this.nodeCount = 0;
         }
-        else if(result == this.first){
+        else if(result == this.first){  //resultado igual a primeiro nó(remove primeiro)
             this.first = this.first.getNext();
             this.first.setPrev(null);
             this.nodeCount--;
+        }
+        else if(result == this.last){  // resultado igual a último nó(remove último)
+            this.last = this.last.getPrev();
+            this.last.setNext(null);
+            this.nodeCount--;
+        }
+        else{  // remover no "meio"
+        before = result.getPrev();
+        after = result.getNext();
+
+        before.setNext(after);
+        after.setPrev(before);
+        this.nodeCount--;
+
         }
     }
     
