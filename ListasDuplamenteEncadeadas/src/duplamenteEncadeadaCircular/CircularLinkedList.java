@@ -50,9 +50,25 @@ public class CircularLinkedList<T extends Comparable <T>> {
             this.last = newNode;
             this.nodeNumber++;
             this.last.setNext(this.first);
-            this.first.setPrev(this.last);
-            
+            this.first.setPrev(this.last);        
         }
+        
+    }
+
+    public void showAll(){
+        DoublyNode<T> aux = this.first;
+
+        if(this.isEmpty()){
+            System.out.println("List is empty!");
+        }
+
+        else{
+            for(int i = 0; i < nodeNumber; i++){
+                System.out.println(aux.getInfo());
+                aux = aux.getNext();
+            }
+        }
+
         
     }
 
