@@ -125,6 +125,7 @@ public class CircularLinkedList<T extends Comparable <T>> {
                 if(aux.getInfo().compareTo(value) == 0){
                     return aux;
                 }
+                aux = aux.getNext();
             }
         }
         return null;
