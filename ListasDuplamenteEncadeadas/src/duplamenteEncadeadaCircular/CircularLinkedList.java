@@ -51,6 +51,7 @@ public class CircularLinkedList<T extends Comparable <T>> {
             this.nodeNumber++;
             this.last.setNext(this.first);
             this.first.setPrev(this.last);
+            
         }
         
     }
