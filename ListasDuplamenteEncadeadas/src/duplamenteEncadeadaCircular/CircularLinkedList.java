@@ -35,5 +35,25 @@ public class CircularLinkedList<T extends Comparable <T>> {
         }
     }
 
+    public void insertLast(T value){
+        DoublyNode<T> newNode = new DoublyNode<>(value);
+
+        if(this.isEmpty()){
+            this.first = newNode;
+            this.last = newNode;
+            this.nodeNumber++;
+            this.last.setNext(this.first);
+            this.first.setPrev(this.last);
+        }else{
+            this.last.setNext(newNode);
+            newNode.setPrev(this.last);
+            this.last = newNode;
+            this.nodeNumber++;
+            this.last.setNext(this.first);
+            this.first.setPrev(this.last);
+        }
+        
+    }
+
     
 }
