@@ -83,8 +83,27 @@ public class CircularLinkedList<T extends Comparable <T>> {
         else{
             this.first = this.first.getNext();
             this.nodeNumber--;
-            this.first.setPrev(this.last);
             this.last.setNext(this.first);
+            this.first.setPrev(this.last);
+            
+        }
+    }
+
+    public void deleteLast(){
+
+        if(this.isEmpty()){
+            System.out.println("List is empty! ");
+        }
+        else if(this.nodeNumber == 1){
+            this.first = null;
+            this.last = null;
+            this.nodeNumber = 0;
+        }
+        else{
+            this.last = this.last.getPrev();
+            this.nodeNumber--;
+            this.last.setNext(this.first);
+            this.first.setPrev(this.last);
         }
     }
 
