@@ -107,9 +107,27 @@ public class CircularLinkedList<T extends Comparable <T>> {
         }
     }
 
-    public void searchList(T value){
+    public DoublyNode<T> searchList(T value){
 
+        if(this.isEmpty()){
+            return null;
+        }
+        else if(value.compareTo(this.first.getInfo()) == 0){
+            return this.first;
+        }
+        else if(value.compareTo(this.last.getInfo()) == 0){
+            return this.last;
+        }
         
+        else{
+            DoublyNode<T> aux = this.first;
+            for(int i = 0; i < this.nodeNumber; i++){
+                if(aux.getInfo().compareTo(value) == 0){
+                    return aux;
+                }
+            }
+        }
+        return null;
     }
 
     
