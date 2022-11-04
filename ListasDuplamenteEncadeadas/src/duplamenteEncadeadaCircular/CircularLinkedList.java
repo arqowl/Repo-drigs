@@ -107,5 +107,10 @@ public class CircularLinkedList<T extends Comparable <T>> {
         }
     }
 
+    public void searchList(T value){
+
+        
+    }
+
     
 }
