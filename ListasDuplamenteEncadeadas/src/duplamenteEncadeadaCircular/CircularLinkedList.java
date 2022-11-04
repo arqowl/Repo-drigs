@@ -107,7 +107,7 @@ public class CircularLinkedList<T extends Comparable <T>> {
         }
     }
 
-    public DoublyNode<T> searchList(T value){
+    public DoublyNode<T> searchList(T value){  //busca simples(não está ordenado)
 
         if(this.isEmpty()){
             return null;
