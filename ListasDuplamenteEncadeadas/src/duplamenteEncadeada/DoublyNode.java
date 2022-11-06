@@ -1,4 +1,4 @@
-public class DoublyNode<T> {
+public class DoublyNode<T  extends Comparable<T>> {
     private DoublyNode<T> next ;
     private DoublyNode<T> prev ;
     private T info;
