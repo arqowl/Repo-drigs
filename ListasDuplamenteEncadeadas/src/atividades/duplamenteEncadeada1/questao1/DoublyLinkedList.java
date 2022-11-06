@@ -106,24 +106,37 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         return false;
         }
     }
-     public boolean remover(T value){
+     public void remover(T value){
         DoublyNode<T> previous;
         DoublyNode<T> after;
 
         DoublyNode<T> result = this.search(value);
 
+        if(this.isEmpty()){
+            System.out.println("Lista vazia");
+        }
         if(result == null){
             System.out.println("Pessoa não encontrada!");
         }
-        else if(result.getInfo().compareTo(this.first.getInfo()) == 0){
-            this.first = this.first.getNext();
-            
-            
-        }
         else{
-            previous = result.getPrevious();
-            after = result.getNext();
+            if(value.compareTo(this.first.getInfo()) == 0){
+                this.first = this.first.getNext();
+                this.first.setPrevious(null);
+                this.nodeCounter--;
+
+            }else if(value.compareTo(this.last.getInfo()) == 0){
+                this.last = this.last.getPrevious();
+                this.last.setNext(null);
+                this.nodeCounter++;
+            }else{
+                previous = result.getPrevious();
+                after = result.getNext();
+
+                previous.setNext(after);
+                after.setPrevious(previous);   
+            }    
         }
+        
      }
 
 
