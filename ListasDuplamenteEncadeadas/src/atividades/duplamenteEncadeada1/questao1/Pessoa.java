@@ -44,7 +44,7 @@ public class Pessoa {
     }
 
     public int compareTo(Pessoa pessoa){
-        return this.rg.compareTo(pessoa.getRg());
+        return this.getRg().compareTo(pessoa.getRg());
     }
 
    
