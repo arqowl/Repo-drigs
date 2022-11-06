@@ -86,11 +86,15 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     }
 
     public DoublyNode<T> verificar(String rg){
-        
+        Pessoa pessoaComparar = new Pessoa(rg);
+
         if(this.isEmpty()){
             return null;
         }
-        else if(this.first.getInfo().compareTo(null))
+        else if(pessoaComparar.compareTo(this.first.getInfo()) == 0){
+            
+        }
+        
         
     }
 
