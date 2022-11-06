@@ -131,5 +131,63 @@ public class CircularLinkedList<T extends Comparable <T>> {
         return null;
     }
 
+    public void showAllInverse(){
+        DoublyNode<T> aux = this.last;
+
+        if(this.isEmpty()){
+            System.out.println("List is empty!");
+        }
+
+        else{
+            for(int i = 0; i < nodeNumber; i++){
+                System.out.println(aux.getInfo());
+                aux = aux.getPrev();
+            }
+        }
+  
+    }
+
+    public void remove(T value){
+        DoublyNode<T> searchResult = this.searchList(value);
+        DoublyNode<T> before;
+        DoublyNode<T> after;
+
+        if(this.isEmpty()){
+            System.out.println("Vazia!");
+        }
+        else if(searchResult != null){
+            if(value.compareTo(this.first.getInfo()) == 0 && this.nodeNumber == 1){
+                this.first = null;
+                this.last = null;
+                this.nodeNumber = 0;
+            }
+            else if(value.compareTo(this.first.getInfo()) == 0){
+                this.first = this.first.getNext();
+                this.first.setPrev(null);
+                this.nodeNumber--;
+            }
+            else if(value.compareTo(this.last.getInfo()) == 0){
+                this.last = this.last.getPrev();
+                this.last.setNext(null);
+                this.nodeNumber--;
+            }
+            else{
+                before = searchResult.getPrev();
+                after = searchResult.getNext();
+                before.setNext(after);
+                after.setPrev(before);
+            }
+        }
+        else{
+            System.out.println("Não encontrado na lista!");
+        }
+        
+        
+        
+        
+    }
+
+
+
     
 }
