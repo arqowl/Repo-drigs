@@ -4,6 +4,14 @@ public class Pessoa {
     private String nome;
     private String rg;
 
+    public Pessoa(String rg){
+        this.rg = rg;
+    }
+    public Pessoa(String nome, String rg) {
+        this.nome = nome;
+        this.rg = rg;
+    }
+
 
 
     public String getNome() {
@@ -38,6 +46,8 @@ public class Pessoa {
     public int compareTo(Pessoa pessoa){
         return this.rg.compareTo(pessoa.getRg());
     }
+
+   
 
     
 
