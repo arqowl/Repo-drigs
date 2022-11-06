@@ -32,4 +32,27 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
         return null;
     }
+
+    public void cadastrar(T value){
+        DoublyNode<T> newNode = new DoublyNode<>(value);
+        DoublyNode<T> result = this.search(value);
+
+        if(this.isEmpty()){
+            this.first = newNode;
+            this.last = newNode;
+            this.nodeCounter = 1;
+        }
+        else{
+            if(result != null){
+                System.out.println("Usuário cadastrado!");
+            }
+            else{
+                this.last.setNext(newNode);
+                this.last.setPrevious(this.last);
+                this.last = newNode;
+            }
+        }
+    }
+
+    
 }
