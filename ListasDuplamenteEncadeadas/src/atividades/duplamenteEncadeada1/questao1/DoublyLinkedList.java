@@ -85,18 +85,48 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
     }
 
-    public DoublyNode<T> verificar(String rg){
-        Pessoa pessoaComparar = new Pessoa(rg);
+    public boolean verificarPresenca(T value){
+        DoublyNode<T> aux = this.first;
 
         if(this.isEmpty()){
-            return null;
+            return false;
         }
-        else if(pessoaComparar.compareTo(this.first.getInfo()) == 0){
+        else if(this.first.getInfo().compareTo(value) == 0){
+            return true;
+        }
+        else if(this.last.getInfo().compareTo(value) == 0){
+            return true;
+        }
+        else{
+            while(aux != null){
+                if(aux.getInfo().compareTo(value) == 0) {
+					return true;
+				}
+            }
+        return false;
+        }
+    }
+     public boolean remover(T value){
+        DoublyNode<T> previous;
+        DoublyNode<T> after;
+
+        DoublyNode<T> result = this.search(value);
+
+        if(result == null){
+            System.out.println("Pessoa não encontrada!");
+        }
+        else if(result.getInfo().compareTo(this.first.getInfo()) == 0){
+            this.first = this.first.getNext();
+            
             
         }
-        
-        
-    }
+        else{
+            previous = result.getPrevious();
+            after = result.getNext();
+        }
+     }
+
+
 
 
 
