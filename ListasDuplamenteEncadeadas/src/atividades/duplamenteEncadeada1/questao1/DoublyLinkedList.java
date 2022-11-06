@@ -72,5 +72,18 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
     }
 
+    public void exibir(){
+        if(this.isEmpty()){
+            System.out.println("Vazia!");
+        }
+        else{
+            DoublyNode<T> aux = this.first;
+            while(aux != null){
+                System.out.println(aux.getInfo());
+                aux = aux.getNext();
+            }
+        }
+    }
+
     
 }
