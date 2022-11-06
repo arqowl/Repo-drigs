@@ -106,6 +106,8 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         return false;
         }
     }
+
+   
      public void remover(T value){
         DoublyNode<T> previous;
         DoublyNode<T> after;
