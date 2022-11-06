@@ -50,7 +50,25 @@ public class DoublyLinkedList<T extends Comparable<T>> {
                 this.last.setNext(newNode);
                 this.last.setPrevious(this.last);
                 this.last = newNode;
+                this.nodeCounter++;
             }
+        }
+    }
+
+    public void cancelar(){
+        if(this.isEmpty()){
+            System.out.println("Lista vazia!");
+        }
+
+        else if(this.nodeCounter == 1){
+            this.first = null;
+            this.last = null;
+            nodeCounter = 0;
+        }
+        else{
+            this.last = this.last.getPrevious();
+            this.last.setNext(null);
+            this.nodeCounter--;
         }
     }
 
