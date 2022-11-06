@@ -37,7 +37,7 @@ public class Main {
                 Pessoa pessoaComparar = new Pessoa(rg);
                 listaPessoas.remover(pessoaComparar);
             }
-            scan.close();
+            
 
         }while(escolha != 0);
     }
