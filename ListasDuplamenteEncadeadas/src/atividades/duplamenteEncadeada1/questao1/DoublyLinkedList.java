@@ -85,5 +85,16 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
     }
 
+    public DoublyNode<T> verificar(String rg){
+        
+        if(this.isEmpty()){
+            return null;
+        }
+        else if(this.first.getInfo().compareTo(null))
+        
+    }
+
+
+
     
 }
