@@ -1,6 +1,6 @@
 package atividades.duplamenteEncadeada1.questao1;
 
-public class Pessoa {
+public class Pessoa implements Comparable <Pessoa> {
     private String nome;
     private String rg;
 

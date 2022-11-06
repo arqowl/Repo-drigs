@@ -85,27 +85,29 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
     }
 
-    public boolean verificarPresenca(T value){
+    public void verificarPresenca(T value){
         DoublyNode<T> aux = this.first;
 
         if(this.isEmpty()){
-            return false;
+            System.out.println("Lista vazia!");
         }
         else if(this.first.getInfo().compareTo(value) == 0){
-            return true;
+            System.out.println("Presente!");
         }
         else if(this.last.getInfo().compareTo(value) == 0){
-            return true;
+            System.out.println("Presente!");
         }
         else{
             while(aux != null){
                 if(aux.getInfo().compareTo(value) == 0) {
-					return true;
+					System.out.println("Presente!");
 				}
             }
-        return false;
+        System.out.println("Não está na lista!");
         }
     }
+
+    
 
    
      public void remover(T value){

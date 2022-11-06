@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        DoublyLinkedList<Pessoa> listaPessoas = new DoublyLinkedList();
+        DoublyLinkedList<Pessoa> listaPessoas = new DoublyLinkedList<>();
         int escolha;
 
         do{
@@ -16,9 +16,26 @@ public class Main {
                 String nome = scan.nextLine();
                 System.out.println("Digite o RG da pessoa: ");
                 String rg = scan.nextLine();
-
                 Pessoa pessoaCadastrar = new Pessoa(nome, rg);
-
+                listaPessoas.cadastrar(pessoaCadastrar);
+            }
+            else if(escolha == 2){
+                listaPessoas.cancelar();
+            }
+            else if(escolha == 3){
+                listaPessoas.exibir();
+            }
+            else if(escolha == 4){
+                System.out.println("Digite o RG: ");
+                String rg = scan.nextLine();
+                Pessoa pessoaComparar = new Pessoa(rg);
+                listaPessoas.verificarPresenca(pessoaComparar);
+            }
+            else if(escolha == 5){
+                System.out.println("Digite o RG: ");
+                String rg = scan.nextLine();
+                Pessoa pessoaComparar = new Pessoa(rg);
+                listaPessoas.remover(pessoaComparar);
             }
 
         }while(escolha != 0);

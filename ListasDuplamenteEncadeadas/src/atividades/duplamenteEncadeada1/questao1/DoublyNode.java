@@ -1,6 +1,6 @@
 package atividades.duplamenteEncadeada1.questao1;
 
-public class DoublyNode<T> {
+public class DoublyNode<T extends Comparable<T>> {
     private DoublyNode<T> next;
     private DoublyNode<T> previous;
     private T info;
