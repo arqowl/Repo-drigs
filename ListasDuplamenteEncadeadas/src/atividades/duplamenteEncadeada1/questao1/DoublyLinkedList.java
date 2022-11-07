@@ -211,6 +211,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     public void insertDescendingOrderNoRepeat(T data){
         DoublyNode<T> result = this.betterSearch(data);
         DoublyNode<T> currentNode;
+        
         DoublyNode<T> newNode = new DoublyNode<>(data);
         if (this.isEmpty()) {
             this.first = newNode;
@@ -230,12 +231,13 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             }
             else{
                 currentNode = this.first;
-
+          
+                
                 if(data.compareTo(currentNode.getInfo()) > 0){
-
+                    
                 }
                 else{
-                    currentNode = currentNode.getNext()
+                     currentNode = currentNode.getNext();
                 }
                 
             }
