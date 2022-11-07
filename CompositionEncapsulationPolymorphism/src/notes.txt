@@ -1,0 +1,21 @@
+heritage: got a ""IS" relationship. A car is a vehicle, a motorbike is a vehicle, a boat is a vehicle.
+
+composition: deals with "HAS A" relationship. A computer has a motherboard, has a case, and has a monitor
+
+composition is modeling parts of the greater hole.
+
+
+
+
+Encapsulation: mechanism that allows you to restrict acess to certain components in the objects that you are creating
+
+-You are able to protect the members of a class from external acess in order to guard against unauthorized acess
+
+-We are stopping outsiders, in other words, classes or code outside of the class that you´re working on from acessing
+the inner workings of a class
+
+
+
+
+
+Rod

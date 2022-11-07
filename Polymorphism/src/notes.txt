@@ -1,0 +1,2 @@
+Polymorphism: each class that has inherited methods from a superclass will have unique functionalities with
+the same method
