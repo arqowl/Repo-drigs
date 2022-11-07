@@ -6,6 +6,12 @@ public class Deskphone implements ITelephone {
     private int myNumber;
     private boolean isRinging;
 
+    
+
+    public Deskphone(int myNumber) {
+        this.myNumber = myNumber;
+    }
+    
     @Override
     public void answer() {
         if(isRinging){
@@ -34,7 +40,7 @@ public class Deskphone implements ITelephone {
     public boolean isRinging() {
         return isRinging;
     }
-    
+
     @Override
     public void powerOn() {
         System.out.println("No action taken, desk phone does not have a power button");
