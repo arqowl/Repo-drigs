@@ -1,7 +1,5 @@
 package exampleInterface;
 
-import java.time.chrono.IsoChronology;
-
 public class MobilePhone implements ITelephone {
     //a palavra implements força a gente a colocar todos os métodos da interface criada.
     
