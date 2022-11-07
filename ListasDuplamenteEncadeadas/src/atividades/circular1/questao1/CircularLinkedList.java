@@ -187,12 +187,5 @@ public class CircularLinkedList<T extends Comparable <T>> {
             System.out.println("Não encontrado na lista!");
         }
         
-        
-        
-        
     }
-
-
-
-    
 }
