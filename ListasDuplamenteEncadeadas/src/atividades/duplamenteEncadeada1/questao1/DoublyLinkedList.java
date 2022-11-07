@@ -208,11 +208,41 @@ public class DoublyLinkedList<T extends Comparable<T>> {
 
 
     }
-    public void insertDescendingOrderNoRepeat(){
+    public void insertDescendingOrderNoRepeat(T data){
+        DoublyNode<T> result = this.betterSearch(data);
+        DoublyNode<T> currentNode;
+        DoublyNode<T> newNode = new DoublyNode<>(data);
+        if (this.isEmpty()) {
+            this.first = newNode;
+            this.last = newNode;
+            this.nodeCounter++;
+        }
+        else if(result == null){
+            if(data.compareTo(this.first.getInfo()) > 0){
+                newNode.setNext(newNode);
+                this.first.setPrevious(newNode);
+                this.first = newNode;
+            }
+            else if(data.compareTo(this.last.getInfo()) < 0){
+                this.last.setNext(newNode);
+                newNode.setPrevious(this.last);
+                this.last = newNode;
+            }
+            else{
+                currentNode = this.first;
 
+                if(data.compareTo(data) > 0){
+                    
+                }
+                
+            }
+        }
+        else{
+            System.out.println("Valor já existe!");
+        }
     }
 
-    public void insertDescendingOrderRepeat(){
+    public void insertDescendingOrderRepeat(T data){
 
     }
 
