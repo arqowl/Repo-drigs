@@ -5,6 +5,8 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     private DoublyNode<T> last;
     private int nodeCounter;
 
+
+    //INÍCIO QUESTÃO 1:
     public boolean isEmpty(){
         if(this.nodeCounter == 0){
             return true;
@@ -142,6 +144,109 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
         
      }
+     //FIM QUESTÃO 1---------------------------------------------------------
+
+     //INICIO QUESTÃO 3(inserir em order crescente e aceita valores repetidos)
+     public void insertAscendingOrderRepeat(T data) {
+
+        DoublyNode<T> actualNode;
+        DoublyNode<T> prevNode = null;
+
+        DoublyNode<T> newNode = new DoublyNode<>(data);
+
+        if (this.isEmpty()) {
+
+            this.first = newNode;
+            this.last = newNode;
+            this.nodeCounter++;
+
+        } else if (data.compareTo(this.first.getInfo()) < 0) {
+
+            newNode.setNext(this.first);
+            this.first.setPrevious(newNode);
+            this.first = newNode;
+            this.nodeCounter++;
+
+        } else if (data.compareTo(this.last.getInfo()) > 0) {
+
+            this.last.setNext(newNode);
+            newNode.setPrevious(this.last);
+            this.last = newNode;
+            this.nodeCounter++;
+
+        } else if (data.compareTo(this.last.getInfo()) == 0) {
+            System.out.println("Repetead value");
+
+        } else {
+
+            actualNode = this.first;
+
+            while (actualNode != null) {
+
+                if (data.compareTo(actualNode.getInfo()) == 0) {
+
+                    System.out.println("Repetead value");
+                    return;
+
+                } else if (data.compareTo(actualNode.getInfo()) < 0) {
+
+                    prevNode = actualNode.getPrevious();
+                    prevNode.setNext(newNode);
+                    actualNode.setPrevious(newNode);
+                    newNode.setNext(actualNode);
+                    newNode.setPrevious(prevNode);
+                    this.nodeCounter++;
+                    return;
+
+                } else {
+                    
+                    actualNode = actualNode.getNext();
+                }
+
+            }
+        }
+
+
+    }
+    public void insertDescendingOrderNoRepeat(){
+
+    }
+
+    public void insertDescendingOrderRepeat(){
+
+    }
+
+    public DoublyNode<T> betterSearch (T value){  // busca sequencial melhorada
+        DoublyNode<T> aux;
+
+        
+
+        if(this.isEmpty()){
+            return null;
+        }
+        else if(value.compareTo(this.last.getInfo()) == 0){
+            return this.last;
+        }
+        else if(value.compareTo(this.last.getInfo()) > 0){
+            return null;
+        }
+        else{
+            aux = this.first;
+            while(aux.getNext() != null){
+                if(aux.getInfo().compareTo(value) == 0){  //achei
+                    return aux;
+                }
+                else if(value.compareTo(aux.getInfo()) > 0){
+                    aux = aux.getNext();
+                }
+                else{
+                    return null;
+                }
+            }
+        }
+        return null;
+    }
+
 
 
 
