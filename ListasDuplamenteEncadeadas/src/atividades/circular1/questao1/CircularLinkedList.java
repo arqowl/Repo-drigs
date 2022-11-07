@@ -165,17 +165,22 @@ public class CircularLinkedList<T extends Comparable <T>> {
                 this.first = this.first.getNext();
                 this.first.setPrev(null);
                 this.nodeNumber--;
+                this.last.setNext(this.first);
+                this.first.setPrev(this.last);
             }
             else if(value.compareTo(this.last.getInfo()) == 0){
                 this.last = this.last.getPrev();
                 this.last.setNext(null);
                 this.nodeNumber--;
+                this.last.setNext(this.first);
+                this.first.setPrev(this.last);
             }
             else{
                 before = searchResult.getPrev();
                 after = searchResult.getNext();
                 before.setNext(after);
                 after.setPrev(before);
+                
             }
         }
         else{
