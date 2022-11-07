@@ -231,8 +231,11 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             else{
                 currentNode = this.first;
 
-                if(data.compareTo(data) > 0){
-                    
+                if(data.compareTo(currentNode.getInfo()) > 0){
+
+                }
+                else{
+                    currentNode = currentNode.getNext()
                 }
                 
             }
