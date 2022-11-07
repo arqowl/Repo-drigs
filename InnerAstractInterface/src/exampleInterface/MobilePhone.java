@@ -1,5 +1,7 @@
 package exampleInterface;
 
+import java.time.chrono.IsoChronology;
+
 public class MobilePhone implements ITelephone {
     //a palavra implements força a gente a colocar todos os métodos da interface criada.
     
@@ -15,16 +17,16 @@ public class MobilePhone implements ITelephone {
     @Override
     public void answer() {
         if(isRinging){
-            System.out.println("Answering the desk phone");
+            System.out.println("Answering the mobile phone");
             isRinging = false;
         }
         
     }
     @Override
     public boolean callPhone(int phoneNumber) {
-        if(phoneNumber == myNumber){
+        if(phoneNumber == myNumber && isOn){
             isRinging = true;
-            System.out.println("Ring ring");
+            System.out.println("Melody ring");
         }else{
             isRinging = false;
         }
