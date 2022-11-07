@@ -2,7 +2,7 @@ package atividades.duplamenteEncadeada1.questao1;
 
 import java.util.Scanner;
 
-public class Main {
+public class MainQ1 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         DoublyLinkedList<Pessoa> listaPessoas = new DoublyLinkedList<>();
