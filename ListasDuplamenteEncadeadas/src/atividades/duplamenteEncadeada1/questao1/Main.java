@@ -26,7 +26,6 @@ public class Main {
             }else if(choice == 4){
                 System.out.println("Digite o RG da pessoa: ");
                 String rg = scan.nextLine();
-                Pessoa pessoaVerificar = new Pessoa(rg);
                 listaPessoasPredio.presencaPredio(rg);
             }else if(choice == 5){
                 listaPessoasPredio.quantidadePessoas();
