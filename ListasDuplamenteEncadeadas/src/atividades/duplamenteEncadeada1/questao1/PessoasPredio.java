@@ -30,8 +30,9 @@ public class PessoasPredio {
         } 
     }
 
-    public int quantidadePessoas(){
-        return filaPessoas.getNodeCount();
+    public void quantidadePessoas(){
+        int num = filaPessoas.getNodeCount();
+        System.out.println("O número de pessoas no prédio é "+num);
     }
 
     public void removerDaLista(String rg){
