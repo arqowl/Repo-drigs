@@ -147,7 +147,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
 
     }
 
-    public void insertCrescentOrder(T data) {
+    public void insertAscendingOrder(T data) {
 
         DoublyNode<T> actualNode;
         DoublyNode<T> prevNode = null;
@@ -206,6 +206,66 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             }
         }
 
+    }
+
+    public void insertDescendingOrder(T data) {
+
+        DoublyNode<T> actualNode;
+        DoublyNode<T> prevNode = null;
+
+        DoublyNode<T> newNode = new DoublyNode<>(data);
+
+        if (this.isEmpty()) {
+
+            this.first = newNode;
+            this.last = newNode;
+            this.nodeCount++;
+
+        } else if (data.compareTo(this.first.getInfo()) > 0) {
+
+            newNode.setNext(this.first);
+            this.first.setPrevious(newNode);
+            this.first = newNode;
+            this.nodeCount++;
+
+        } else if (data.compareTo(this.last.getInfo()) < 0) {
+
+            this.last.setNext(newNode);
+            newNode.setPrevious(this.last);
+            this.last = newNode;
+            this.nodeCount++;
+
+        } else if (data.compareTo(this.last.getInfo()) == 0) {
+            System.out.println("Repetead value");
+
+        } else {
+
+            actualNode = this.first;
+
+            while (actualNode != null) {
+
+                if (data.compareTo(actualNode.getInfo()) == 0) {
+
+                    System.out.println("Repetead value");
+                    return;
+
+                } else if (data.compareTo(actualNode.getInfo()) > 0) {
+
+                    prevNode = actualNode.getPrevious();
+                    prevNode.setNext(newNode);
+                    actualNode.setPrevious(newNode);
+                    newNode.setNext(actualNode);
+                    newNode.setPrevious(prevNode);
+                    this.nodeCount++;
+                    return;
+
+                } else {
+                    
+                    actualNode = actualNode.getNext();
+                }
+
+            }
+        }
     }
     public DoublyNode<T> search (T value){  // busca sequencial melhorada
         DoublyNode<T> aux;
