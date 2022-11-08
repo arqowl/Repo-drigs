@@ -50,7 +50,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             }
             else if(this.nodeCounter == 1){
                 this.first.setNext(newNode);
-                newNode.setPrevious(this.first);
+                newNode.setPrevious();
             }
             else{
                 this.last.setNext(newNode);
