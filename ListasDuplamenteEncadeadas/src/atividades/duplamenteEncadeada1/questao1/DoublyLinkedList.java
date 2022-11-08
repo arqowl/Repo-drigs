@@ -48,6 +48,10 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             if(result != null){
                 System.out.println("Usuário cadastrado!");
             }
+            else if(this.nodeCounter == 1){
+                this.first.setNext(newNode);
+                newNode.setPrevious(this.first);
+            }
             else{
                 this.last.setNext(newNode);
                 this.last.setPrevious(this.last);
