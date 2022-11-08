@@ -34,7 +34,12 @@ public class PessoasPredio {
         return filaPessoas.getNodeCount();
     }
 
-    
+    public void removerDaLista(String rg){
+        Pessoa pessoaRemover = new Pessoa(rg);
+        filaPessoas.searchList(pessoaRemover);
+    }
+
+
 
     
     
