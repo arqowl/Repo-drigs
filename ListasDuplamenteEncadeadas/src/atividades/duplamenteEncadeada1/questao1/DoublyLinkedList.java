@@ -6,6 +6,12 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     private DoublyNode<T> last;
     private int nodeCount;
 
+    
+
+    public int getNodeCount() {
+        return nodeCount;
+    }
+
     public boolean isEmpty() {
 
         if (this.nodeCount == 0) {
@@ -81,7 +87,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
     }
 
-    public void showDataLast() {
+    public void showDataInverse() {
 
         DoublyNode<T> aux;
 
