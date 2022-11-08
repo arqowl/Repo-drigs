@@ -147,7 +147,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
 
     }
 
-    public void insertAscendingOrder(T data) {
+    public void insertAscendingOrderRepeat(T data) {
 
         DoublyNode<T> actualNode;
         DoublyNode<T> prevNode = null;
@@ -208,7 +208,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
 
     }
 
-    public void insertDescendingOrder(T data) {
+    public void insertDescendingOrderRepeat(T data) {
 
         DoublyNode<T> actualNode;
         DoublyNode<T> prevNode = null;
