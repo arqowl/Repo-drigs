@@ -267,7 +267,32 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             }
         }
     }
-    public DoublyNode<T> search (T value){  // busca sequencial melhorada
+
+    public DoublyNode<T> searchList(T value){  //busca simples(não está ordenado)
+
+        if(this.isEmpty()){
+            return null;
+        }
+        else if(value.compareTo(this.first.getInfo()) == 0){
+            return this.first;
+        }
+        else if(value.compareTo(this.last.getInfo()) == 0){
+            return this.last;
+        }
+        
+        else{
+            DoublyNode<T> aux = this.first;
+            for(int i = 0; i < this.nodeCount; i++){
+                if(aux.getInfo().compareTo(value) == 0){
+                    return aux;
+                }
+                aux = aux.getNext();
+            }
+        }
+        return null;
+    }
+    
+    public DoublyNode<T> betterSeachList (T value){  // busca sequencial melhorada
         DoublyNode<T> aux;
 
         
@@ -298,8 +323,8 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         return null;
     }
 
-    public void remove(T value){
-        DoublyNode<T> result = this.search(value);
+    public void betterRemove(T value){
+        DoublyNode<T> result = this.betterSeachList(value);
 
         DoublyNode<T> before, after;
 
