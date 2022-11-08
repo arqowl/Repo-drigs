@@ -20,13 +20,13 @@ public class PessoasPredio {
         filaPessoas.showDataInverse();
     }
 
-    public boolean presencaPredio(String rg){
+    public void presencaPredio(String rg){
 
         Pessoa pessoaComparar = new Pessoa(rg);
         if(filaPessoas.searchList(pessoaComparar) != null){
-            return true;
+            System.out.println("Sim, esta pesso se encontra no prédio!");
         }else{
-            return false;
+            System.out.println("A pessoa procurada não se encontra no prédio!");
         } 
     }
 
