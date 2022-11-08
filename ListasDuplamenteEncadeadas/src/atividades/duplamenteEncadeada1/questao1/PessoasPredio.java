@@ -36,7 +36,7 @@ public class PessoasPredio {
 
     public void removerDaLista(String rg){
         Pessoa pessoaRemover = new Pessoa(rg);
-        filaPessoas.searchList(pessoaRemover);
+        filaPessoas.remove(pessoaRemover);  
     }
 
 
