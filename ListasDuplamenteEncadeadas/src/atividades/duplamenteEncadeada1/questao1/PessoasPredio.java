@@ -24,7 +24,7 @@ public class PessoasPredio {
 
         Pessoa pessoaComparar = new Pessoa(rg);
         if(filaPessoas.searchList(pessoaComparar) != null){
-            System.out.println("Sim, esta pesso se encontra no prédio!");
+            System.out.println("Sim, esta pessoa se encontra no prédio!");
         }else{
             System.out.println("A pessoa procurada não se encontra no prédio!");
         } 
