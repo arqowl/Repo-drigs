@@ -47,9 +47,5 @@ public class Pessoa implements Comparable <Pessoa> {
         return this.getRg().compareTo(pessoa.getRg());
     }
 
-   
-
-    
-
     
 }

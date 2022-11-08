@@ -33,8 +33,4 @@ public class DoublyNode<T extends Comparable<T>> {
         this.info = info;
     }
 
-    
-
-    
-    
 }

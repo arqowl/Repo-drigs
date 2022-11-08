@@ -7,7 +7,6 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     private int nodeCount;
 
     
-
     public int getNodeCount() {
         return nodeCount;
     }
