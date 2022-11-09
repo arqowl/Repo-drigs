@@ -133,7 +133,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         
     }
 
-    public DoublyNode<T> betterSearchDescendingOrder(T value){
+    private DoublyNode<T> betterSearchDescendingOrder(T value){
         DoublyNode<T> currentNode = new DoublyNode<>(value);
         if(this.isEmpty()){
             return null;
@@ -284,7 +284,17 @@ public class DoublyLinkedList<T extends Comparable<T>> {
 
     }
 
-    public void showElements(){
+    public void showInfoDescendingNoRepeat(T value){
+        DoublyNode<T> valueFound = this.betterSearchDescendingOrder(value);
+
+        if(valueFound == null){
+            System.out.println("Valor não encontrado");
+        }else{
+            System.out.println(valueFound.getData());
+        }
+    }
+
+    public void showElementsFirstToLast(){
         if(this.isEmpty()){
             System.out.println("Vazia!");
         }
@@ -293,6 +303,19 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             while(currentNode != null){
                 System.out.println(currentNode.getData());
                 currentNode = currentNode.getNext();
+            }
+        }
+    }
+
+    public void showElementsLastToFirst(){
+        if(this.isEmpty()){
+            System.out.println("Vazia!");
+        }
+        else{
+            DoublyNode<T> currentNode = this.last;
+            while(currentNode != null){
+                System.out.println(currentNode.getData());
+                currentNode = currentNode.getPrevious();
             }
         }
     }
