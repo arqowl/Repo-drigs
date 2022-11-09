@@ -300,8 +300,6 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     public DoublyNode<T> betterSeachList (T value){  // busca sequencial melhorada
         DoublyNode<T> aux;
 
-        
-
         if(this.isEmpty()){
             return null;
         }
