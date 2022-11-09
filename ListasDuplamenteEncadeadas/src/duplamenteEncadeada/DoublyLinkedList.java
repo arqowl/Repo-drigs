@@ -76,6 +76,31 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
     }
 
+    public DoublyNode<T> simpleSearch(T value){
+
+        if(this.isEmpty()){
+            return null;
+        }
+        else if(value.compareTo(this.first.getData()) == 0){
+            return this.first;
+        }
+        else if(value.compareTo(this.last.getData()) == 0){
+            return this.last;
+        }
+        else{
+            DoublyNode<T> currentNode = this.first;
+            while(currentNode.getData().compareTo(value) != 0){
+                currentNode = currentNode.getNext();
+
+                if(currentNode == null){
+                    return null;
+                }
+            }
+        return currentNode;
+        }
+      
+    }
+
 
 
     
