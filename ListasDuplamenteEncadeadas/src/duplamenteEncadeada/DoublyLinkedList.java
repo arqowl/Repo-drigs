@@ -103,6 +103,36 @@ public class DoublyLinkedList<T extends Comparable<T>> {
       
     }*/
 
+    public DoublyNode<T> betterSearchAscendingOrder(T value){
+        DoublyNode<T> currentNode = new DoublyNode<>(value);
+        if(this.isEmpty()){
+            return null;
+        }
+        else if(value.compareTo(this.first.getData()) == 0){
+            return this.first;
+        }
+        else if(value.compareTo(this.last.getData()) == 0){
+            return this.last;
+        }
+        else{
+            currentNode = this.first;
+            while(currentNode != null){
+                if(value.compareTo(currentNode.getData()) > 0){  //Se a lista está em ordem crescente, e o valor que passamos é maior que o atual
+                                                                 //então ele não está na lista
+                    return null;
+                }
+                else if(value.compareTo(currentNode.getData()) == 0){
+                    return currentNode;
+                }
+                else{
+                    currentNode = currentNode.getNext();
+                }
+            }
+        return null;
+        }
+        
+    }
+
     public void insertAscendingOrderNoRepeat(T data) {
 
         DoublyNode<T> actualNode;
