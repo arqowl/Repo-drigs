@@ -101,7 +101,21 @@ public class DoublyLinkedList<T extends Comparable<T>> {
       
     }
 
-    
+    public void showElements(){
+        if(this.isEmpty()){
+            System.out.println("Vazia!");
+        }
+        else{
+            DoublyNode<T> currentNode = this.first;
+            while(currentNode != null){
+                System.out.println(currentNode.getData());
+                currentNode = currentNode.getNext();
+            }
+
+        }
+    }
+
+
 
 
 
