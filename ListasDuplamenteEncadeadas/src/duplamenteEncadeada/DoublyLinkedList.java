@@ -76,7 +76,9 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
     }
 
-    public DoublyNode<T> simpleSearch(T value){  //busca simples
+    
+
+    /*public DoublyNode<T> simpleSearch(T value){  //busca simples
 
         if(this.isEmpty()){
             return null;
@@ -99,6 +101,67 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         return currentNode;
         }
       
+    }*/
+
+    public void insertAscendingOrderNoRepeat(T data) {
+
+        DoublyNode<T> actualNode;
+        DoublyNode<T> prevNode = null;
+
+        DoublyNode<T> newNode = new DoublyNode<>(data);
+
+        if (this.isEmpty()) {
+
+            this.first = newNode;
+            this.last = newNode;
+            this.nodeCounter++;
+
+        } else if (data.compareTo(this.first.getData()) < 0) {
+
+            newNode.setNext(this.first);
+            this.first.setPrevious(newNode);
+            this.first = newNode;
+            this.nodeCounter++;
+
+        } else if (data.compareTo(this.last.getData()) > 0) {
+
+            this.last.setNext(newNode);
+            newNode.setPrevious(this.last);
+            this.last = newNode;
+            this.nodeCounter++;
+
+        } else if (data.compareTo(this.last.getData()) == 0) {
+            System.out.println("Repetead value");
+
+        } else {
+
+            actualNode = this.first;
+
+            while (actualNode != null) {
+
+                if (data.compareTo(actualNode.getData()) == 0) {
+
+                    System.out.println("Repetead value");
+                    return;
+
+                } else if (data.compareTo(actualNode.getData()) < 0) {
+
+                    prevNode = actualNode.getPrevious();
+                    prevNode.setNext(newNode);
+                    actualNode.setPrevious(newNode);
+                    newNode.setNext(actualNode);
+                    newNode.setPrevious(prevNode);
+                    this.nodeCounter++;
+                    return;
+
+                } else {
+                    
+                    actualNode = actualNode.getNext();
+                }
+
+            }
+        }
+
     }
 
     public void showElements(){
@@ -114,7 +177,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
     }
 
-    public void removeElement(T value){
+    /*public void removeElement(T value){
         DoublyNode<T> elementFound = this.simpleSearch(value);
         DoublyNode<T> before, after;
         
@@ -144,5 +207,5 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         after.setPrevious(before);
         this.nodeCounter--;
         }
-    }
+    }  */
 }
