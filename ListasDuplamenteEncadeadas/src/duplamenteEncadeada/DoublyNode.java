@@ -2,6 +2,11 @@ public class DoublyNode<T extends Comparable<T>> {
     private DoublyNode<T> next;
     private DoublyNode<T> previous;
     private T data;
+
+    
+    public DoublyNode(T data) {
+        this.data = data;
+    }
     
     public DoublyNode<T> getNext() {
         return next;
