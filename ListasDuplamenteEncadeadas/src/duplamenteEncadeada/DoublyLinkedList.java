@@ -111,9 +111,42 @@ public class DoublyLinkedList<T extends Comparable<T>> {
                 System.out.println(currentNode.getData());
                 currentNode = currentNode.getNext();
             }
-
         }
     }
+
+    public void removeElement(T value){
+        DoublyNode<T> elementFound = this.simpleSearch(value);
+        DoublyNode<T> before, after;
+        
+        if(elementFound == null){
+            System.out.println("Value has not been found");
+        }
+        else if(this.nodeCounter == 1){  //lista com apenas 1 nó
+            this.first = null;
+            this.last = null;
+            this.nodeCounter = 0;
+        }
+        else if(elementFound == this.first){  //resultado igual a primeiro nó(remove primeiro)
+            this.first = this.first.getNext();
+            this.first.setPrevious(null);
+            this.nodeCounter--;
+        }
+        else if(elementFound == this.last){  // resultado igual a último nó(remove último)
+            this.last = this.last.getPrevious();
+            this.last.setNext(null);
+            this.nodeCounter--;
+        }
+        else{  // remover no "meio"
+        before = elementFound.getPrevious();
+        after = elementFound.getNext();
+
+        before.setNext(after);
+        after.setPrevious(before);
+        this.nodeCounter--;
+        }
+    }
+
+
 
 
 
