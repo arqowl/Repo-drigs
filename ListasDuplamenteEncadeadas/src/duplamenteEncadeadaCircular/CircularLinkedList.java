@@ -4,6 +4,7 @@ public class CircularLinkedList<T extends Comparable <T>> {
     private DoublyNode<T> first;
     private DoublyNode<T> last;
     private int nodeNumber;
+    private int nodeLimit;
 
     public boolean isEmpty(){
         if(this.nodeNumber == 0){
