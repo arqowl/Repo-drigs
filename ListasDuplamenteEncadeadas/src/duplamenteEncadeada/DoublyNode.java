@@ -7,7 +7,7 @@ public class DoublyNode<T extends Comparable<T>> {
     public DoublyNode(T data) {
         this.data = data;
     }
-    
+
     public DoublyNode<T> getNext() {
         return next;
     }
@@ -27,6 +27,5 @@ public class DoublyNode<T extends Comparable<T>> {
         this.data = data;
     }
 
-    
 
 }
