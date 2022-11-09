@@ -76,7 +76,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
     }
 
-    public DoublyNode<T> simpleSearch(T value){
+    public DoublyNode<T> simpleSearch(T value){  //busca simples
 
         if(this.isEmpty()){
             return null;
@@ -145,12 +145,4 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         this.nodeCounter--;
         }
     }
-
-
-
-
-
-
-
-    
 }
