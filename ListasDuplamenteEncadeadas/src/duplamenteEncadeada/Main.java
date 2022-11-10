@@ -3,12 +3,25 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        DoublyLinkedList<Integer> listaInteiros = new DoublyLinkedList<>();
 
         int escolha;
 
         do{
             exibir();
             escolha = scan.nextInt(); scan.nextLine();
+
+            if(escolha == 1){
+                System.out.println("Digite o inteiro para inserir na lista: ");
+                int num = scan.nextInt(); scan.nextLine();
+                listaInteiros.insertAscendingOrderRepeat(num);
+            }
+            
+            else if(escolha == 2){
+                listaInteiros.showElementsFirstToLast();
+            }
+
+            
         }while(escolha != 0);
     }
 
@@ -18,3 +31,4 @@ public class Main {
     }
     
 }
+

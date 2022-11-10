@@ -244,6 +244,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             this.first = newNode;
             this.nodeCounter++;
         }
+        
         else if(value.compareTo(this.last.getData()) > 0){
             this.last.setNext(newNode);
             newNode.setPrevious(this.last);
@@ -251,29 +252,27 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             this.nodeCounter++;
         }
         else{
-            DoublyNode<T> previousNode = null;
-            DoublyNode<T> currentNode = this.first;
-            DoublyNode<T> nextNode = currentNode.getNext();
+            DoublyNode<T> currentNode = this.first.getNext();
+
             while(currentNode != null){
-                if(value.compareTo(currentNode.getData()) > 0){
-                    currentNode.setNext(newNode);
-                    nextNode.setPrevious(newNode);
+                if(value.compareTo(currentNode.getData()) <= 0){
+                    newNode.setNext(currentNode);
+                    newNode.setPrevious(currentNode.getPrevious());
+                    currentNode.getPrevious().setNext(currentNode);
+                    currentNode.setPrevious(currentNode);
                     this.nodeCounter++;
-                }
-                else if(value.compareTo(currentNode.getData()) == 0){
-                    previousNode.setNext(newNode);
-                    currentNode.setPrevious(newNode);
-                    this.nodeCounter++;
+                    break;
                 }
                 else{
-                    previousNode = currentNode;
                     currentNode = currentNode.getNext();
                 }
             }
         }
-
         
     }
+
+        
+    
 
     public void insertDescendingOrderNoRepeat(T data) {
 
