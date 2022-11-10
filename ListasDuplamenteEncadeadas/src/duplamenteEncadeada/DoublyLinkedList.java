@@ -244,6 +244,11 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             this.last = newNode;
             this.nodeCounter++;
         }
+        else if(data.compareTo(this.last.getData()) == 0){
+            newNode.setNext(this.last);
+            this.last.setPrevious(newNode);
+            this.nodeCounter++;
+        }
         else{
             DoublyNode<T> currentNode = this.first.getNext();
             while(currentNode != null){
