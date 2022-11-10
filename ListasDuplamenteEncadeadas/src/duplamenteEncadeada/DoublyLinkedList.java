@@ -299,7 +299,16 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             this.last = newNode;
             this.nodeCounter++;
         }
-        else if()
+        else if(data.compareTo(this.first.getData()) < 0){
+            newNode.setNext(this.first);
+            this.first.setPrevious(newNode);
+            this.first = newNode;
+        }
+        else if(data.compareTo(this.last.getData()) > 0){
+            this.last.setNext(newNode);
+            newNode.setPrevious(this.last);
+            this.last = newNode;
+        }
     }
 
     public void showInfoDescendingNoRepeat(T value){
