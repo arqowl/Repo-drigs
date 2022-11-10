@@ -224,8 +224,44 @@ public class DoublyLinkedList<T extends Comparable<T>> {
 
     }
 
-    public void insertAscendingOrderRepeat(T value){
+    public void insertAscendingOrderRepeat(T data){
+        DoublyNode<T> newNode = new DoublyNode<>(data);
+        if(this.isEmpty()){
+            this.first = newNode;
+            this.last = newNode;
+            this.nodeCounter++;
+        }
+        else if(data.compareTo(this.first.getData()) <= 0){
+            newNode.setNext(this.first);
+            this.first.setPrevious(newNode);
+            this.first = newNode;
+            this.nodeCounter++;
+        }
         
+        else if(data.compareTo(this.last.getData()) > 0){
+            this.last.setNext(newNode);
+            newNode.setPrevious(this.last);
+            this.last = newNode;
+            this.nodeCounter++;
+        }
+        else{
+            DoublyNode<T> currentNode = this.first;
+            while(currentNode != null){
+                if(data.compareTo(currentNode.getData()) < 0){
+                    newNode.setPrevious(currentNode.getPrevious());
+                    newNode.setNext(currentNode);
+                    this.nodeCounter++;
+                }
+                else if(data.compareTo(currentNode.getData()) == 0){
+                    newNode.setPrevious(currentNode.getPrevious());
+                    newNode.setNext(currentNode);
+                    this.nodeCounter++;
+                }
+                else{
+                    currentNode = currentNode.getNext();
+                }
+            }
+        }
       
     }
 
@@ -293,43 +329,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     }
 
     public void insertDescendingOrderRepeat(T data) {
-        DoublyNode<T> newNode = new DoublyNode<>(data);
-        if(this.isEmpty()){
-            this.first = newNode;
-            this.last = newNode;
-            this.nodeCounter++;
-        }
-        else if(data.compareTo(this.first.getData()) <= 0){
-            newNode.setNext(this.first);
-            this.first.setPrevious(newNode);
-            this.first = newNode;
-            this.nodeCounter++;
-        }
         
-        else if(data.compareTo(this.last.getData()) > 0){
-            this.last.setNext(newNode);
-            newNode.setPrevious(this.last);
-            this.last = newNode;
-            this.nodeCounter++;
-        }
-        else{
-            DoublyNode<T> currentNode = this.first;
-            while(currentNode != null){
-                if(data.compareTo(currentNode.getData()) < 0){
-                    newNode.setPrevious(currentNode.getPrevious());
-                    newNode.setNext(currentNode);
-                    this.nodeCounter++;
-                }
-                else if(data.compareTo(currentNode.getData()) == 0){
-                    newNode.setPrevious(currentNode.getPrevious());
-                    newNode.setNext(currentNode);
-                    this.nodeCounter++;
-                }
-                else{
-                    currentNode = currentNode.getNext();
-                }
-            }
-        }
     }
 
     public void showInfoDescendingNoRepeat(T value){
