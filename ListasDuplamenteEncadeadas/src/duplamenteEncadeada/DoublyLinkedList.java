@@ -245,7 +245,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             this.nodeCounter++;
         }
         else{
-            DoublyNode<T> currentNode = this.first;
+            DoublyNode<T> currentNode = this.first.getNext();
             while(currentNode != null){
                 if(data.compareTo(currentNode.getData()) < 0){
                     newNode.setPrevious(currentNode.getPrevious());
