@@ -10,7 +10,6 @@ public class Main {
         do{
             exibir();
             escolha = scan.nextInt(); scan.nextLine();
-
             if(escolha == 1){
                 System.out.println("Digite o inteiro para inserir na lista: ");
                 int num = scan.nextInt(); scan.nextLine();
