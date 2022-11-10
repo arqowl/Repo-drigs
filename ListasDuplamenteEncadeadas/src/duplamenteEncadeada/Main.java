@@ -18,7 +18,10 @@ public class Main {
             }
             
             else if(escolha == 2){
+                System.out.println("Lista abaixo!");
                 listaInteiros.showElementsFirstToLast();
+                System.out.println();
+                System.out.println("Fim da lista!!!");
             }
 
             
