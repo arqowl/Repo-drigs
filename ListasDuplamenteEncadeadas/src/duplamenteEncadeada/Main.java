@@ -13,7 +13,7 @@ public class Main {
             if(escolha == 1){
                 System.out.println("Digite o inteiro para inserir na lista: ");
                 int num = scan.nextInt(); scan.nextLine();
-                listaInteiros.insertionSortAscending(num);
+                listaInteiros.insertionSortDescending(num);
             }
             
             else if(escolha == 2){
@@ -28,7 +28,7 @@ public class Main {
     }
 
     public static void exibir(){
-        System.out.println("1 - inserir valores em ordem crescente com repetido");
+        System.out.println("1 - inserir valores em ordem decrescente com repetido");
         System.out.println("2 - Mostrar a lista");
     }
     
