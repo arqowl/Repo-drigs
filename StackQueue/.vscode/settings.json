@@ -1,9 +1,0 @@
-{
-    "java.project.sourcePaths": ["src"],
-    "java.project.outputPath": "bin",
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "c:\\Users\\Pichau\\Desktop\\TAD.jar",
-        "c:\\Users\\Pichau\\Desktop\\TAD Library\\TAD\\TAD.jar"
-    ]
-}
