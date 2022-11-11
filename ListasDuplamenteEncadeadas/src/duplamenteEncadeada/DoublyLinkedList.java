@@ -226,44 +226,51 @@ public class DoublyLinkedList<T extends Comparable<T>> {
 
     public void insertAscendingOrderRepeat(T data){
         DoublyNode<T> newNode = new DoublyNode<>(data);
+        //Checa se está vazio
         if(this.isEmpty()){
             this.first = newNode;
             this.last = newNode;
             this.nodeCounter++;
         }
+        //Checar se o que será inserido é menor ou igual ao primeiro
         else if(data.compareTo(this.first.getData()) <= 0){
             newNode.setNext(this.first);
             this.first.setPrevious(newNode);
             this.first = newNode;
             this.nodeCounter++;
         }
-        
+        //Checa se é maior do que o último
         else if(data.compareTo(this.last.getData()) > 0){
             this.last.setNext(newNode);
             newNode.setPrevious(this.last);
             this.last = newNode;
             this.nodeCounter++;
         }
+        //Checar se dado for igual ao último, ele coloca antes do último
+        /*
         else if(data.compareTo(this.last.getData()) == 0){
             newNode.setNext(this.last);
             this.last.setPrevious(newNode);
             this.nodeCounter++;
-        }
+        }*/
         else{
             DoublyNode<T> currentNode = this.first.getNext();
             while(currentNode != null){
-                if(data.compareTo(currentNode.getData()) < 0){
+                if(data.compareTo(currentNode.getData()) <= 0){
                     newNode.setPrevious(currentNode.getPrevious());
                     newNode.setNext(currentNode);
+                    currentNode.getPrevious().setNext(newNode);
+                    currentNode.setPrevious(newNode);
                     this.nodeCounter++;
                     break;
                 }
+                /*
                 else if(data.compareTo(currentNode.getData()) == 0){
                     newNode.setPrevious(currentNode.getPrevious());
                     newNode.setNext(currentNode);
                     this.nodeCounter++;
                     break;
-                }
+                }*/
                 else{
                     currentNode = currentNode.getNext();
                 }
