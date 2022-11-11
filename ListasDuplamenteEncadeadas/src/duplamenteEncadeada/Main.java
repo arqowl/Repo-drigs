@@ -13,7 +13,7 @@ public class Main {
             if(escolha == 1){
                 System.out.println("Digite o inteiro para inserir na lista: ");
                 int num = scan.nextInt(); scan.nextLine();
-                listaInteiros.insertAscendingOrderRepeat(num);
+                listaInteiros.insertionSortAscending(num);
             }
             
             else if(escolha == 2){
